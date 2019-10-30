@@ -6,45 +6,24 @@
         cellPadding="10"
     >
         <thead>
-            <tr>
-                <th>项目编码</th>
-                <th>项目名称</th>
-                <th>项目指标</th>
-                <th>备注</th>
-            </tr>
+            <tr><th v-for="label in labels">{{label}}</th></tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1111</td>
-                <td>2222</td>
-                <td>3333</td>
-                <td>4444</td>
-            </tr>
-            <tr>
-                <td>1111</td>
-                <td>2222</td>
-                <td>3333</td>
-                <td>4444</td>
-            </tr>
-            <tr>
-                <td>1111</td>
-                <td>2222</td>
-                <td>3333</td>
-                <td>4444</td>
-            </tr>
-            <tr>
-                <td>1111</td>
-                <td>2222</td>
-                <td>3333</td>
-                <td>4444</td>
+            <tr v-for="item in tableData">
+                <slot :rows="item"></slot>
             </tr>
         </tbody>
     </table>
 </template>
 
 <script>
+    import datas from './datas.js'
+    import attributes from './attributes.js'
+    import events from './events.js'
+    import methods from "./methods";
     export default {
-        name: "tree-table"
+        name: "tree-table",
+        mixins:[datas,attributes,events,methods]
     }
 </script>
 
