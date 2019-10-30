@@ -9,7 +9,7 @@
             <tr><th v-for="label in labels">{{label}}</th></tr>
         </thead>
         <tbody>
-            <tr v-for="item in tableData">
+            <tr v-for="item in tableData" :key="item.id">
                 <slot :rows="item"></slot>
             </tr>
         </tbody>

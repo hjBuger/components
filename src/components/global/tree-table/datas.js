@@ -3,7 +3,23 @@ export default {
         return {
             labels:[],
             columnProps:[],
-            tableData:[1,2,3,4]
+            tableData:[]
+        }
+    },
+    props:{
+        treeData:{
+            type:Array,
+            default(){
+                return [];
+            }
+        }
+    },
+    watch:{
+        treeData:{
+            deep:true,
+            handler(val){
+                this.tableData = val;
+            }
         }
     }
 }

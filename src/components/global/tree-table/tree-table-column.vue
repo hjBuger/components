@@ -1,6 +1,10 @@
 <template>
-    <td class="tree-table-column" :label="label" :prop="prop">
-        <slot ></slot>
+    <td
+        class="tree-table-column"
+        :label="label"
+        :prop="prop"
+    >
+        <slot></slot>
     </td>
 </template>
 
